@@ -4,7 +4,7 @@
 
 ## Installation
 
-These instructions show how to modify the P3SampleApp Unity project in the P3 SDK into a P3SavepointManager Unity project. This approach is necessary to satisfy the P3 SDK license.
+These instructions show how to modify the P3SampleApp Unity project in the P3 SDK into a P3SavepointManager Unity project. This approach is necessary to satisfy the P3 SDK license. To simplify the procedure, the minimal number of steps are given. A full distribution would remove the HomeScene and lots of unused scripts.  
 
 <pre>
   
