@@ -69,6 +69,15 @@ These instructions show how to modify the P3SampleApp Unity project in the P3 SD
 	    buttonLegend = (GameObject)Instantiate(Resources.Load("Prefabs/Framework/ButtonLegend"));  
     Change "Prefabs/Framework/ButtonLegend" to "Prefabs/Framework/ButtonLegend3D"  
 
+- Make P3SavepointManager module agnostic:  
+    Edit C:\P3\P3SavepointManager\Assets\Scripts\Modes\P3SMBaseGameMode.cs  
+    Comment out this line:  
+        homeMode = new HomeMode (p3, P3SMPriorities.PRIORITY_HOME, "Home");
+    Comment out this line:  
+        shotsMode = new ShotsMode (p3, Priorities.PRIORITY_MECH+2);  
+    Comment out this line:  
+        InitBallSearchMode();  
+
 - Run P3SavepointManager in the simulator:  
     Select Assets > Scenes in the Project Window  
     Double-click on Bootstrap to load the Bootstrap scene  
