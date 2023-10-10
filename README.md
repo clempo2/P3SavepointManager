@@ -77,6 +77,8 @@ These instructions show how to modify the P3SampleApp Unity project in the P3 SD
         shotsMode = new ShotsMode (p3, Priorities.PRIORITY_MECH+2);  
     Comment out this line:  
         InitBallSearchMode();  
+    Comment out this line:  
+        p3.AddMode (shotsMode);  
 
 - Run P3SavepointManager in the simulator:  
     Select Assets > Scenes in the Project Window  
