@@ -9,6 +9,7 @@ using System.Linq;
 using Multimorphic.P3App.GUI.Selector;
 using System;
 using Multimorphic.NetProc;
+using Multimorphic.NetProcMachine.LEDs;
 
 namespace Multimorphic.P3SM.Modes
 {
@@ -25,6 +26,7 @@ namespace Multimorphic.P3SM.Modes
         private const string ACTION_RENAME = "Rename Savepoint";
         private const string ACTION_COPY   = "Copy Savepoint";
         private const string ACTION_DELETE = "Delete Savepoint";
+        private const string ACTION_EXIT = "Exit";
 
         private const string BACKUP_EXTENSION = ".backup";
 
@@ -116,6 +118,12 @@ namespace Multimorphic.P3SM.Modes
         public override void SceneLiveEventHandler(string evtName, object evtData)
         {
             base.SceneLiveEventHandler(evtName, evtData);
+            ushort[] blue = { 0, 0, 50, 255 };
+            foreach (LED led in p3.LEDs.Values)
+            {
+                LEDScript script = new LEDScript(led, Priority);
+                LEDHelpers.OnLED(p3, script, blue);
+            }
             PromptForAction();
         }
 
@@ -135,6 +143,7 @@ namespace Multimorphic.P3SM.Modes
             list.Add(ACTION_RENAME);
             list.Add(ACTION_COPY);
             list.Add(ACTION_DELETE);
+            list.Add(ACTION_EXIT);
 
             SetSelectorData("ProfileSelector", list);
             OpenDialog("ProfileDialog");
@@ -223,12 +232,12 @@ namespace Multimorphic.P3SM.Modes
             }
         }
 
-        private void ShowPopup(string message, Action promptAction)
+        private void ShowPopup(string message, Action prompt)
         {
             PostModeEventToModes("Evt_ShowPopup", message);
-            if (promptAction != null)
+            if (prompt != null)
             {
-                delay("prompt", EventType.None, 3.0, new Multimorphic.P3.VoidDelegateNoArgs(promptAction));
+                delay("prompt", EventType.None, 3.0, new Multimorphic.P3.VoidDelegateNoArgs(prompt));
             }
         }
 
@@ -242,7 +251,15 @@ namespace Multimorphic.P3SM.Modes
             if (state == STATE_ACTION)
             {
                 action = selection;
-                PromptForProfileName();
+                if (action == ACTION_EXIT)
+                {
+                    PostModeEventToGUI("Evt_Exit", 0);
+                }
+                else
+                {
+                    PromptForProfileName();
+
+                }
             }
             else if (state == STATE_PROFILE)
             {

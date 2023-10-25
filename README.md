@@ -42,6 +42,16 @@ These instructions show how to modify the P3SampleApp Unity project in the P3 SD
         Disable the KeyIndicators: click the checkmark in the top left corner in the Inspector to remove it  
     In the top menu, select File > Save Scenes
 
+- Make the exit countdown visible on top of the application:  
+    Expand Assets > Resources > Prefabs in the Project Window  
+    Select Assets > Resources > Prefabs > Framework in the Project Window  
+    Select ExitMessage in the Asset Window  
+    Change the Canvas "Sort Order" to 100 in the Inspector Window
+
+- Make the volume editor visible on top of the application:  
+    Select VolumeEditor in the Asset Window  
+    Change the Canvas "Sort Order" to 99 in the Inspector Window
+
 - Repair the button legends:  
     Edit C:\P3\P3SavepointManager\Assets\Scripts\Modes\ProfileManagement\ProfileSelectorMode.cs  
     In the mode_started() method, remove this code:  
