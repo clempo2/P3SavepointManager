@@ -110,7 +110,7 @@ These instructions show how to modify the P3SampleApp Unity project in the P3 SD
 
 Please submit a [GitHub issue](https://github.com/clempo2/P3SavepointManager/issues) if you find a problem.
 
-You can discuss P3EmptyGame and other P3 Development topics on the [P3 Community Discord Server](https://discord.gg/GuKGcaDkjd) in the dev-forum channel under the 3rd Party Development section.
+You can discuss P3SavepointManager and other P3 Development topics on the [P3 Community Discord Server](https://discord.gg/GuKGcaDkjd) in the dev-forum channel under the 3rd Party Development section.
 
 ## License
 
