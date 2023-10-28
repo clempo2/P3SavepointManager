@@ -234,7 +234,10 @@ namespace Multimorphic.P3SM.Modes
 
         private void ShowPopup(string message, Action prompt)
         {
-            PostModeEventToModes("Evt_ShowPopup", message);
+            Logger.LogError("P3SMAttractMode ShowPopup " + message);
+            // loop is a work-around for color bug in TextReceiver
+            for (int i = 0; i < 10; i++)
+                PostModeEventToModes("Evt_ShowPopup", message);
             if (prompt != null)
             {
                 delay("prompt", EventType.None, 3.0, new Multimorphic.P3.VoidDelegateNoArgs(prompt));

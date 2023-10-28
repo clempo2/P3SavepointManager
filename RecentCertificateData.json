@@ -1,0 +1,27 @@
+{
+  "displayName": "P3SavepointManager",
+  "description": "Savepoint Manager",
+  "executable": "P3SM",
+  "appVersion": "1.0.0.0",
+  "tags": [
+    ""
+  ],
+  "compatibleModuleIds": [
+    "Any"
+  ],
+  "certificateType": "App",
+  "companyName": "Multimorphic",
+  "featureFlags": [
+    ""
+  ],
+  "hardwareIds": [
+    ""
+  ],
+  "expiryDate": "2023-10-28T02:21:23.9322565Z",
+  "relativeExpiryYears": 0,
+  "relativeExpiryMonths": 0,
+  "relativeExpiryDays": 3,
+  "relativeExpiryHours": 0,
+  "appHash": "42dcf9fcb07400111a3e63c2f704652c27ee875998d66ef9487d6bb969dce958",
+  "validationMessage": ""
+}
