@@ -2,6 +2,8 @@
 
 [P3SavepointManager](https://github.com/clempo2/P3SavepointManager) is a simple file manager to rename, copy or delete savepoints on the [P3 pinball machine](https://www.multimorphic.com/p3-pinball-platform/) by [Multimorphic](https://www.multimorphic.com/). This functionality is missing from the P3 feature menu in the [P3 SDK V0.8](https://www.multimorphic.com/support/projects/customer-support/wiki/3rd-Party_Development_Kit)
 
+![Screenshot](Screenshot.png)
+
 ## Installation
 
 These instructions show how to modify the P3SampleApp Unity project in the P3 SDK into a P3SavepointManager Unity project. This approach is necessary to satisfy the P3 SDK license. To simplify the procedure, the minimal number of steps are given. A full distribution would remove the HomeScene and lots of unused scripts.  
